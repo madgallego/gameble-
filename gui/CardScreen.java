@@ -3,9 +3,13 @@ package gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.text.StyledEditorKit;
 
 
@@ -94,5 +98,15 @@ public class CardScreen {
 		
 		return button;
 	}//end of create button function
+
+	private JLabel headerLetter(String letter){
+		JLabel textLabel = new JLabel(letter,SwingConstants.CENTER);
+		textLabel.setForeground(Color.BLACK);
+		textLabel.setFont(new Font("Times New Roman", Font.PLAIN, 48));
+		textLabel.setBorder(BorderFactory.createLineBorder(Color.WHITE, 5, true));
+		
+		return textLabel;
+	}
+
 
 }//end of class
