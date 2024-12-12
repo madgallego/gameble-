@@ -3,6 +3,8 @@ package gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -10,12 +12,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import java.io.FileNotFoundException;
 
 public class OptionScreen {
     private JFrame window;
     private String name;
     private String level;
-    public OptionScreen(){
+    public OptionScreen() throws FileNotFoundException{
         window = new JFrame();
 		//frame properties
 		window.setLayout(new BorderLayout(0,0));
@@ -60,7 +63,7 @@ public class OptionScreen {
         return info;
     }
 
-    private JPanel OptionButtons(){
+    private JPanel OptionButtons() throws FileNotFoundException {
         JPanel options = new JPanel();
 		options.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
 		options.setLayout(new GridLayout( 4, 1, 200,2));
@@ -72,7 +75,12 @@ public class OptionScreen {
 			public void actionPerformed(ActionEvent e) {
 				level = "easy";
 				System.out.println("Point 2");
-				CardScreen gameON = new CardScreen(name, level);
+				try {
+					CardScreen gameON = new CardScreen(name, level);
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				window.dispose();
 			}	
 		});
@@ -83,7 +91,12 @@ public class OptionScreen {
 			public void actionPerformed(ActionEvent e) {
                 level = "average";
 				System.out.println("Point 2");
-				CardScreen gameON = new CardScreen(name, level);
+				try {
+					CardScreen gameON = new CardScreen(name, level);
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				window.dispose();
 			}	
 		});
@@ -94,7 +107,12 @@ public class OptionScreen {
 			public void actionPerformed(ActionEvent e) {
 				level = "difficult";
 				System.out.println("Point 2");
-				CardScreen gameON = new CardScreen(name, level);
+				try {
+					CardScreen gameON = new CardScreen(name, level);
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				window.dispose();
 			}	
 		});

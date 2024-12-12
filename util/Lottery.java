@@ -30,6 +30,7 @@ public class Lottery {
         PatternTracker set = new PatternTracker();
 
         FileValueRead();
+        BingoRoll();
     }
 
     private void FileValueRead () throws FileNotFoundException{
@@ -39,6 +40,9 @@ public class Lottery {
             }
         }
         
+    }
+    public int getValue (int i, int j){
+        return arr[i][j];
     }
 
     private void BingoRoll(){
@@ -63,7 +67,7 @@ public class Lottery {
     public String get5DrawnNumbers(int i){
         String drawn = new String();
         for(int j=0; j<5;j++){
-            drawn = drawn + lotteryVal[i] + " ";
+            drawn = drawn + lotteryVal[i] + " | ";
             i++;
         }
         return drawn;
