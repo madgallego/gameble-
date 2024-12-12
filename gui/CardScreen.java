@@ -1,5 +1,6 @@
 package gui;
 
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,13 +12,20 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.text.StyledEditorKit;
-
+import util.Lottery;
 
 public class CardScreen {
 	private JFrame window;
+	private String userName;
+	private String userLevel;
+	private int hints;
+	private int drawCount;
 
-	public CardScreen(){
+	public CardScreen(String Name, String Level){
+		userName = Name;
+		userLevel = Level;
 		window = new JFrame();
+		LevelSetter();
 		PrintCardUI();
 
 
@@ -42,11 +50,30 @@ public class CardScreen {
 		window.setVisible(true); //to show in the screen
 	}//end of CardPrint Block
 
+	private void LevelSetter(){
+		switch(userLevel){
+		case "easy": hints = 2;
+					break;
+		case "average": hints = 1;
+					break;
+		case "difficult": hints = 0;
+					break;	
+}
+	}
+
 	private JPanel Lottery(){
 		JPanel roll = new JPanel();
 		roll.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 		roll.setBackground(Color.YELLOW);
 		roll.add(createButton("Print", 2));
+
+		JButton drawLots = new JButton("DRAW");
+		drawLots.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				 
+			}	
+		});
 
 
 		return roll;

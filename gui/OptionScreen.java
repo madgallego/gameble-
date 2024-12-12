@@ -50,6 +50,7 @@ public class OptionScreen {
 			public void actionPerformed(ActionEvent e) {
 				name = userIN.getText();
 				System.out.println(name);
+                userIN.setEnabled(false);
 			}	
 		});
         
@@ -71,7 +72,7 @@ public class OptionScreen {
 			public void actionPerformed(ActionEvent e) {
 				level = "easy";
 				System.out.println("Point 2");
-				OptionScreen UserUX = new OptionScreen();
+				CardScreen gameON = new CardScreen(name, level);
 				window.dispose();
 			}	
 		});
@@ -82,7 +83,7 @@ public class OptionScreen {
 			public void actionPerformed(ActionEvent e) {
                 level = "average";
 				System.out.println("Point 2");
-				OptionScreen UserUX = new OptionScreen();
+				CardScreen gameON = new CardScreen(name, level);
 				window.dispose();
 			}	
 		});
@@ -93,7 +94,7 @@ public class OptionScreen {
 			public void actionPerformed(ActionEvent e) {
 				level = "difficult";
 				System.out.println("Point 2");
-				OptionScreen UserUX = new OptionScreen();
+				CardScreen gameON = new CardScreen(name, level);
 				window.dispose();
 			}	
 		});
