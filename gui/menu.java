@@ -39,7 +39,7 @@ public class menu{
 
 		JLabel textLabel = new JLabel("BINGO++",SwingConstants.CENTER);
 		textLabel.setForeground(Color.BLACK);
-		textLabel.setFont(new Font("Courier New", Font.PLAIN, 36));
+		textLabel.setFont(new Font("Courier New", Font.BOLD, 36));
 		title.add(textLabel);
 
 
@@ -52,16 +52,17 @@ public class menu{
 		menu.setLayout(new GridLayout( 3, 1, 200,2));
 		
 		menu.add(filler(" "));
-		JButton newPush = new JButton("start");
-		newPush.addActionListener(new ActionListener() {
+		JButton start = new JButton("start");
+		start.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				System.out.println("Point 2");
+				OptionScreen UserUX = new OptionScreen();
 				window.dispose();
 			}	
 		});
-		menu.add(newPush);
+		menu.add(start);
 		menu.add(filler(" "));
 
 		return menu;
