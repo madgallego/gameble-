@@ -27,7 +27,7 @@ public class Lottery {
         cardNumber = (randVal.nextInt(5)+1);
         f = new File("database\\cards\\"+cardNumber+".txt");
         scan = new Scanner(f);
-        PatternTracker set = new PatternTracker();
+        set = new PatternTracker();
 
         FileValueRead();
         BingoRoll();
@@ -41,8 +41,9 @@ public class Lottery {
         }
         
     }
-    public int getValue (int i, int j){
-        return arr[i][j];
+    public String getValue (int i, int j){
+        String Value = " "+ arr[i][j] +" ";
+        return Value;
     }
 
     private void BingoRoll(){
@@ -68,6 +69,7 @@ public class Lottery {
         String drawn = new String();
         for(int j=0; j<5;j++){
             drawn = drawn + lotteryVal[i] + " | ";
+            cardMarker(i);
             i++;
         }
         return drawn;
@@ -117,6 +119,9 @@ public class Lottery {
 
     }//END OF FUNC BLOCK
 
+    public void visualizer(){
+        set.markingUI();
+    }
     public boolean getResult(){
         result = set.CardChecker();
         return result;
